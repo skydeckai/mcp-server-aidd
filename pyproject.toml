@@ -24,13 +24,15 @@ dependencies = [
     "tree-sitter-typescript>=0.23.2",
     "psutil>=7.0.0",
     "mss>=10.0.0",
-    "pygetwindow>=0.0.9",
-    "pyobjc-framework-Quartz>=11.0",
     "pillow>=11.1.0",
     "requests>=2.32.3",
     "html2text>=2025.4.15",
     "beautifulsoup4>=4.13.3",
 ]
+
+[project.optional-dependencies]
+macos = ["pyobjc-framework-Quartz>=11.0"]
+windows = ["pygetwindow>=0.0.9"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
@@ -64,4 +66,3 @@ build-backend = "hatchling.build"
 [project.scripts]
 skydeckai-code = "src.aidd:main"
 skydeckai-code-cli = "src.aidd.cli:main"
-
